@@ -10,7 +10,7 @@
 
 (def test-recordlist (list test-record1 test-record2 test-record3))
 
-(def test-keytemplate {:treeid value})
+(def test-keytemplate {:treeid identity})
 
 (def test-mergetemplate {:amount +})
 
@@ -19,9 +19,6 @@
 
 (deftest test-first-item
   (is (= {:jouid 1 :treeid 1 :amount 10.05} (first test-recordlist))))
-
-(deftest test-value
-  (is (= 20 (value 20))))
 
 (deftest test-create-record-key
   (is (= {:treeid 1} (create-record-key test-record1 test-keytemplate))))

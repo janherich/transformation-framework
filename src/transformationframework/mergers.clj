@@ -1,11 +1,6 @@
 (ns transformationframework.mergers
   (:require [transformationframework.functions :as fc]))
 
-(defn value
-  "Just pass value through the function without any modification"
-  {:added "TransformationFramework 1.0"}
-  [x] x)
-
 (defn subrecordlist
   "Higher order function which returns function for creating sub-record lists, takes keys to construct sub-record list from"
   {:added "TransformationFramework 1.0"}

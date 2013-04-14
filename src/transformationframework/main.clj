@@ -15,7 +15,7 @@
 
 (def test-recordlist (list test-record1 test-record2 test-record3 test-record4 test-record5))
 
-(def test-keytemplate {:treeid mg/value})
+(def test-keytemplate {:treeid identity})
 
 (def test-mergetemplate {:amount + :jouid list :discounts (mg/subrecordlist :discount :d_reason)})
 
