@@ -26,7 +26,8 @@
   [records-seq key-template]
   (loop [records records-seq merge-groups {}]
     (if records
-      (let [current-record (first records) key (create-record-key current-record key-template)]
+      (let [current-record (first records) 
+            key (create-record-key current-record key-template)]
         (recur (next records) (update-in merge-groups [key] #(flatten (fc/safe-conj (list current-record) %)))))
       merge-groups)))
 
